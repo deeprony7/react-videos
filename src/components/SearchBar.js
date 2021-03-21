@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
     state= { term: '' }
-
     onInputChange(e) {
         this.setState({ term: e.target.value })
         console.log(this.state.term)
@@ -10,6 +9,8 @@ export default class SearchBar extends Component {
 
     onFormSubmit = e => {
         e.preventDefault()
+
+        this.props.onTermSubmit(this.state.term)
     }
 
     render() {
