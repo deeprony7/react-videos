@@ -1,9 +1,9 @@
 import './VideoItem.css'
 import React from 'react'
 
-export default function VideoItem({ video }) {
+export default function VideoItem({ video, onVideoSelect }) {
     return (
-        <div className="item video-item">
+        <div onClick={() => onVideoSelect(video)} className="item video-item">
             <img className="ui image" 
                 src={video.snippet.thumbnails.medium.url} alt=''/>
             
